@@ -1,0 +1,23 @@
+ package com.zl.crud.Service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.zl.crud.Bean.Department;
+import com.zl.crud.Dao.DepartmentMapper;
+
+@Service
+public class DepartmentService {
+	
+	@Autowired
+	private DepartmentMapper departmentMapper;
+	
+	public List<Department> getDepts(){
+		List<Department> list = departmentMapper.selectByExample(null);
+		return list;
+	}
+	
+	
+}
